@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mon Jeu</title>
+</head>
+<body>
+    <h1>Mon Jeu</h1>
+    <button id="startButton">Démarrer le jeu</button>
+    <script>
+        document.getElementById("startButton").addEventListener("click", function() {
+            fetch('/startGame')
+                .then(response => {
+                    if (response.ok) {
+                        // Le jeu a été lancé avec succès.
+                        // Vous pouvez ajouter d'autres actions ici si nécessaire.
+                        console.log('Le jeu a été lancé.');
+                    } else {
+                        console.error('Erreur lors du démarrage du jeu.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur de communication avec le serveur : ' + error);
+                });
+        });
+    </script>
+
+
+
+</body>
+</html>
