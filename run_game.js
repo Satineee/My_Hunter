@@ -1,6 +1,5 @@
 const { exec } = require('child_process');
 
-// Commande pour exécuter votre fichier exécutable C
 const command = './my_hunter';
 
 exec(command, (error, stdout, stderr) => {

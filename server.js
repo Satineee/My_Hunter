@@ -1,4 +1,6 @@
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 const { exec } = require('child_process');
 
 const server = http.createServer((req, res) => {
@@ -17,6 +19,18 @@ const server = http.createServer((req, res) => {
             }
             console.log(`Le jeu a été lancé avec succès : ${stdout}`);
             res.end('Le jeu a été lancé avec succès.');
+        });
+    } else if (req.url === '/') {
+        const filePath = path.join(__dirname, 'index.html');
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            if (err) {
+                console.error(`Erreur lors de la lecture du fichier : ${err.message}`);
+                res.statusCode = 500;
+                res.end('Erreur lors de la lecture du fichier.');
+                return;
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
         });
     } else {
         res.statusCode = 404;
