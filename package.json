@@ -1,0 +1,24 @@
+{
+  "name": "my_hunter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run_game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "16.18.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Satineee/My_Hunter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Satineee/My_Hunter/issues"
+  },
+  "homepage": "https://github.com/Satineee/My_Hunter#readme"
+}
